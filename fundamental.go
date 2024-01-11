@@ -87,17 +87,55 @@ func sliced() {
 }
 
 func maps() {
-	var MyMap map[string]int = map[string]int{}
-	// MyMap = map[string]int{}
+	// var MyMap map[string]int = map[string]int{}
+	// // MyMap = map[string]int{}
 
-	MyMap["ruby"] = 9
-	MyMap["javascript"] = 8
-	MyMap["Go"] = 10
+	// MyMap["ruby"] = 9
+	// MyMap["javascript"] = 8
+	// MyMap["Go"] = 10
 
-	fmt.Println(MyMap)
+	MyMap := map[string]string{"ruby": "is beautiful", "go": "is super fast", "javascript": "hype"} //penulisan bentuk lain langusng
+
+	for key, value := range MyMap {
+		fmt.Println("Key : ", key, " value : ", value)
+	}
+
+	fmt.Println("===============")
+
+	delete(MyMap, "ruby")
+
+	for key, value := range MyMap {
+		fmt.Println("Key : ", key, " value : ", value)
+	}
+
+	fmt.Printf("\n%s", MyMap)
 	fmt.Println(MyMap["ruby"]) //untuk mendapatkan nilai ruby
 }
 
+func mapAdvance() {
+	MyMap := map[string]string{
+		"ruby":       "is beautiful",
+		"go":         "is super fast",
+		"javascript": "hype",
+	}
+	value, isAvailable := MyMap["python"]
+	fmt.Println(isAvailable)
+	fmt.Println(value) //output is empty
+}
+
+func mapSlice() {
+	students := []map[string]string{
+		{"name": "agung", "score": "A"},
+		{"name": "budi", "score": "C"},
+		{"name": "frengki", "score": "B"},
+	}
+
+	for _, student := range students {
+		fmt.Println(student["name"], " - ", student["score"])
+	}
+	// fmt.Println(students)
+}
+
 func main() {
-	maps()
+	mapSlice()
 }
