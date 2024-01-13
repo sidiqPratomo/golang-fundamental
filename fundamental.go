@@ -65,10 +65,10 @@ func arrayLoop() {
 		"java",
 	}
 
-	// for index, lang := range languages {
-	// 	fmt.Println("index: ", index, "language : ", lang)
-	// }
-	fmt.Println(languages)
+	for index, lang := range languages {
+		fmt.Println("index: ", index, "language : ", lang)
+	}
+	// fmt.Println(languages)
 }
 
 func sliced() {
